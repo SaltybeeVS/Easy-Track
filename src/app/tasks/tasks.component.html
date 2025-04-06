@@ -1,0 +1,19 @@
+<section id="tasks">
+    <header>
+        <h2>{{name}}'s Tasks</h2>
+        <menu>
+            <button (click)="showComponent = true">Add Task</button>
+        </menu>
+    </header>
+
+    <ul>
+        @for (task of selectedUserTasks; track task.id){
+            <li>
+                <app-task [task]="task"/>
+            </li>
+        }
+    </ul>
+    @if(showComponent){
+        <app-new-task [userId]="userId" (close)="showComponent = false"/>
+    }
+</section>
