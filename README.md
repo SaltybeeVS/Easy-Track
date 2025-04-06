@@ -1,27 +1,92 @@
-# Essentials
+# EasyTask - Enterprise Task Management
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+![EasyTask Logo](assets/task-management-logo.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+EasyTask is a task management application designed for enterprise teams, enabling efficient task organization without friction.
 
-## Code scaffolding
+## Key Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 👥 User-specific task management
+- 📅 Clear due date formatting
+- ➕ Easy task creation
+- ✅ Mark tasks as complete
+- 💾 LocalStorage data persistence
+- 🎨 Clean, responsive interface
 
-## Build
+## Core Components
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### `AppComponent`
+- Root component managing user selection
+- Displays selected user's tasks
+- Lists all available users
 
-## Running unit tests
+### `TasksComponent`
+- Shows tasks for selected user
+- Allows adding new tasks
+- Organizes tasks in ordered list
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### `TaskComponent`
+- Displays individual task details
+- Provides task completion functionality
 
-## Running end-to-end tests
+### `UserComponent`
+- Shows user information
+- Enables user selection
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### `TasksService`
+- Central service for all task operations
+- Persists tasks to localStorage
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular 17+
+- TypeScript
+- CSS for styling
+- LocalStorage for data persistence
+
+## Installation & Usage
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the application with `ng serve`
+4. Open your browser at `http://localhost:4200`
+
+## Data Structure
+
+### User
+```typescript
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
+```
+
+### Task
+```typescript
+interface Task {
+  id: string;
+  userId: string;
+  title: string;
+  summary: string;
+  dueDate: string;
+}
+```
+
+## Future Improvements
+
+- [ ] Add user authentication
+- [ ] Implement task categories/tags
+- [ ] Add task priorities
+- [ ] Implement search and filtering
+- [ ] Backend synchronization
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request with your suggestions or improvements.
+
+## 📚 Other Language Versions
+
+- [Read in Spanish](README_es.md)
+- [Read in Portuguese](README_pt.md)
